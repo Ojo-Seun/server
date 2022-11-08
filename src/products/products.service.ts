@@ -5,9 +5,11 @@ import data from '../data'
 
 class ProductServices  {
 
+    constructor(){}
+
     createProduct = async () => {
         await db.connect()
-        
+        await ProductModel.deleteMany()
         const products = await ProductModel.insertMany(data)
         db.disconnect()
         return products

@@ -1,17 +1,20 @@
 import express, {NextFunction, Request, Response } from "express"
-import productsPontroller from "./products/products.controller"
-import mongoose from "mongoose"
+import productsController from "./products/products.controller"
+import usersController from './users/users.controller'
 const app = express()
-import  cors from 'cors'
-app.use(cors({origin:"http://localhost:3000",optionsSuccessStatus:200}))
+import cors from 'cors'
+import bodyPaser from 'body-parser'
+
 const port = process.env.PORT || 5000
 
-// mongoose.connect('mongodb://localhost:27017/amazon', {
-    
-// }).catch(error=> console.log(`${error.reason  }error from database`));
+app.use(cors({ origin: "http://localhost:3000", optionsSuccessStatus: 200 }))
+app.use(bodyPaser.json())
 
 
-app.use('/api/products', productsPontroller)
+
+
+app.use('/api/products', productsController)
+app.use('/api/users', usersController)
 
 
 

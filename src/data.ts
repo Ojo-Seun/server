@@ -17,7 +17,7 @@ export const products = [
     countInStock: 4,
     rating: 3,
     sellerName: 'op',
-    image: '/quadcopter/dji-mavic-2-pro1.jpg',
+    image: ['/quadcopter/dji-mavic-2-pro1.jpg','/quadcopter/dji-mavic-2-pro2.jpg','/quadcopter/dji-mavic-2-pro3.jpg'],
     category: 'quadcopter',
   },
   {
@@ -38,7 +38,7 @@ export const products = [
     totalWeigth: '0.795KG',
     rating: 5,
     sellerName: 'DJI',
-    image: '/quadcopter/djifpv2.jpeg',
+    image: ['/quadcopter/djifpv2.jpeg','/quadcopter/djifpv1.jpg','/quadcopter/dji-fpv3.jpg'],
     category: 'quadcopter',
   },
   {
@@ -59,7 +59,7 @@ export const products = [
     totalWeigth: '21.1Kg',
     rating: 2,
     sellerName: 'DJI',
-    image: '/quadcopter/dji-agras-t20-1.jpg',
+    image: ['/quadcopter/dji-agras-t20-1.jpg','/quadcopter/dji-agras-t20-2.jpg','/quadcopter/dji-agras-t20-3.jpg'],
     category: 'quadcopter',
   },
   {
@@ -80,7 +80,7 @@ export const products = [
     countInStock: 4,
     rating: 5.0,
     sellerName: 'GYUAV',
-    image: '/fixed-wing/g15.jpg',
+    image: ['/fixed-wing/g15.jpg'],
     category: 'fixed-wing',
   },
   {
@@ -101,7 +101,7 @@ export const products = [
     speed: '70km/h',
     rating: 4.5,
     sellerName: 'op',
-    image: '/fixed-wing/g25.jpg',
+    image: ['/fixed-wing/g25.jpg'],
     category: 'fixed-wing',
   },
   {
@@ -122,7 +122,7 @@ export const products = [
     speed: '82km/h',
     rating: 4.5,
     sellerName: 'op',
-    image: '/fixed-wing/g50.jpg',
+    image: ['/fixed-wing/g50.jpg'],
     category: 'fixed-wing',
   },
 ];

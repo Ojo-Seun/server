@@ -3,8 +3,8 @@ import { Schema, model, models } from 'mongoose'
 
 const ProductSchema = new Schema({
     id: {type:Number, require:true},
-    name: {type:String,require:true},
-    slug: {type:String,require:true},
+    name: {type:String,require:true,unique:true},
+    slug: {type:String,require:true, unique:true},
     price: {type:Number, require:true},
     brand: {type:String,require:true},
     maxPayload: {type:String,require:true},
@@ -19,10 +19,10 @@ const ProductSchema = new Schema({
     countInStock: {type:Number, require:true},
     rating: {type:Number, require:true},
     sellerName: {type:String,require:true},
-    image: {type:String,require:true},
+    image: {type:Array,require:true},
     category: {type:String,require:true},
 
-})
+},{timestamps:true})
 
 
 
