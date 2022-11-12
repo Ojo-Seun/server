@@ -1,6 +1,7 @@
 import express, {NextFunction, Request, Response } from "express"
 import productsController from "./products/products.controller"
 import usersController from './users/users.controller'
+import ordersController from './orders/orders.controller'
 const app = express()
 import cors from 'cors'
 import bodyPaser from 'body-parser'
@@ -15,6 +16,7 @@ app.use(bodyPaser.json())
 
 app.use('/api/products', productsController)
 app.use('/api/users', usersController)
+app.use('/api/orders', ordersController)
 
 
 

@@ -7,7 +7,6 @@ import { generateToken } from "../utils/auths";
 
 class UserServices  {
 
-    constructor() { }
     
     static register = async (userInfo: registerProps) => {
        await db.connect()

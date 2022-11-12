@@ -1,15 +1,14 @@
 import express, { Request, Response } from 'express'
 import expressAsyncHandler from 'express-async-handler'
-import db from '../db'
+import { adminAuth, isAuth } from '../utils/auths'
 import ProductServices from './products.service'
-import getAllProducts from './products.service'
 const router = express.Router()
 
 
 const productServices = new ProductServices()
 
 
-router.post('/create-product', expressAsyncHandler( async(req:Request, res:Response) => {
+router.post('/create-product', isAuth,adminAuth, expressAsyncHandler( async(req:Request, res:Response) => {
     const products = await productServices.createProduct()
     res.status(201).json(products)
 
