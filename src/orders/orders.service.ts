@@ -47,6 +47,16 @@ class OrderServices {
         const result = await order.save()
         db.disconnect()
         return result
+  }
+  
+
+  static getorderById = async (_id: string) => {
+        await db.connect()
+    const order = await OrderModel.findById({ _id: _id })
+        db.disconnect()
+        if ( await order) {
+            return order
+        }
     }
 }
 

@@ -17,6 +17,13 @@ router.post('/create-order', isAuth, expressAsyncHandler(async (req, res) => {
     res.status(201).json(result)
 }))
 
+router.get('/:_id', isAuth, expressAsyncHandler(async (req, res) => {
+    const _id = req.params._id
+    const result = await OrderServices.getorderById(_id)
+    res.status(200).json(result)
+    
+}))
+
 
 
 
