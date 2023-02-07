@@ -3,7 +3,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 
-const dbUrl = process.env.NODE_ENV === "production"?process.env.ATLAS_URL:process.env.LOCAL_MONGODB_URL
+export const dbUrl = process.env.NODE_ENV === "production"?process.env.ATLAS_URL:process.env.LOCAL_MONGODB_URL
 const connection = {
     isConnected:0
 }

@@ -6,14 +6,25 @@ const app = express()
 import cors from 'cors'
 import bodyPaser from 'body-parser'
 import expressAsyncHandler from "express-async-handler"
-import db from "./db"
+import mongoose from "mongoose"
+import dotenv from 'dotenv'
+dotenv.config()
+
 
 const port = process.env.PORT || 5000
+export const dbUrl = process.env.NODE_ENV==="production"? process.env.ATLAS_URL:process.env.LOCAL_MONGODB_URL
+
+mongoose.connect(dbUrl!).then(() => {
+    console.log('connected to db');
+  })
+  .catch((err) => {
+    console.log(err.message);
+  });
+
+
 
 app.use(cors())
 app.use(bodyPaser.json())
-db.connect().then(() => {
-})
 
 app.get('/', expressAsyncHandler((req, res) => {
     res.status(200).send("WELCOME TO FLYHIGH")
