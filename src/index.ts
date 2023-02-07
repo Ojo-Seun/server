@@ -6,15 +6,17 @@ const app = express()
 import cors from 'cors'
 import bodyPaser from 'body-parser'
 import expressAsyncHandler from "express-async-handler"
+import db from "./db"
 
 const port = process.env.PORT || 5000
 
 app.use(cors())
 app.use(bodyPaser.json())
-
+db.connect().then(() => {
+})
 
 app.get('/', expressAsyncHandler((req, res) => {
-    res.status(200).send("WELCOME TO FLYHIGH SERVER")
+    res.status(200).send("WELCOME TO FLYHIGH")
 }))
 
 app.use('/api/products', productsController)

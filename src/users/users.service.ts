@@ -9,7 +9,6 @@ class UserServices  {
 
     
     static register = async (userInfo: registerProps) => {
-       await db.connect()
         const isExist = await UserModel.findOne({ email: userInfo.email })
         if (isExist) {
             return "Email Already Exist" 
@@ -19,7 +18,6 @@ class UserServices  {
         const result = await User.save()
 
         const { name, _id, isAdmin } = await result
-        db.disconnect()
 
         return {
             name,

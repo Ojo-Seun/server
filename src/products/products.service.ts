@@ -8,25 +8,19 @@ class ProductServices  {
     constructor(){}
 
     createProduct = async () => {
-        await db.connect()
         await ProductModel.deleteMany()
         const products = await ProductModel.insertMany(data)
-        db.disconnect()
         return products
     }
 
      getAllProducts = async () => {
-        await db.connect()
-         const products = await ProductModel.find()
-         db.disconnect()
+         const products = await ProductModel.find({category:"fixed-wing"})
         return products
     }
 
 
     getProductBySlug = async (slug:string) => {
-        await db.connect()
         const product = await ProductModel.findOne({slug:slug})
-        db.disconnect()
         if (product) {
             return product
         }
